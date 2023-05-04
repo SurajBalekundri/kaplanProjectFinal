@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel = 'tests' name="Suite">
+	<listeners>
+		<listener class-name="TestngFrameWork.TestComponents.Listeners"></listener>
+	</listeners>
+  <test thread-count="4" name="Ecommerce Test">
+    <classes>
+      <class name="TestngFrameWork.Tests.EcommerceTest"/>
+    </classes>
+  </test>
+  
+   <test thread-count="4" name="Error Validation test">
+    <classes>
+      <class name="TestngFrameWork.Tests.ErrorValidationTest"/>
+    </classes>
+  </test>
+  
+</suite> 
