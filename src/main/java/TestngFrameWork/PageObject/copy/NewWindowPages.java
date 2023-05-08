@@ -9,7 +9,7 @@ import TestngFrameWork.UtilsPacage.Utils;
 
 public class NewWindowPages extends Utils {
 	
-	WebDriver driver;
+	public WebDriver driver;
 	
 	public NewWindowPages(WebDriver driver) {
 		super(driver);

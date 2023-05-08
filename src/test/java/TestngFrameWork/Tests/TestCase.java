@@ -19,10 +19,8 @@ public class TestCase extends BaseTest{
 	
 	@Test
 	
-	public void Flipkart() throws IOException {
-		//BaseTest baseTest = new BaseTest();
+	public void Flipkart1() throws IOException {
 		
-		//driver.get("https://www.flipkart.com/");
 		driver.get(flipkartURL);
 		Utils utils = new Utils(driver);
 
@@ -31,18 +29,18 @@ public class TestCase extends BaseTest{
 		utils.hoverAnElement(HomePage.getKidsEle());
 		utils.hoverAnElement(HomePage.getBoysAndGirlsJeanEle());
 		utils.clickOnEle(HomePage.getBoysAndGirlsJeanEle());
-		utils.waitForEle();
+		//utils.waitForEle();
 
 		KidsJeansPage KidsJeansPage = new KidsJeansPage(driver);
+		utils.waitForElement(KidsJeansPage.getLowToHighEle());
 		utils.clickOnEle(KidsJeansPage.getLowToHighEle());
-		utils.waitForEle();
 		utils.hoverAnElement(KidsJeansPage.getAvailabilityEle());
 		utils.clickOnEle(KidsJeansPage.getAvailabilityEle());
-
 		utils.clickOnEle(KidsJeansPage.getoutOfStockEle());
-		utils.waitForEle();
+		//utils.waitForEle();
+		utils.waitForElement(KidsJeansPage.getFirstItemEle());
 
-		utils.hoverAnElement(KidsJeansPage.getFirstItemEle());//change ele to get 1st item even after applying any filter
+		utils.hoverAnElement(KidsJeansPage.getFirstItemEle());
 		utils.clickOnEle(KidsJeansPage.getFirstItemEle());
 		utils.switchToSecondWindow();
 		
@@ -55,30 +53,27 @@ public class TestCase extends BaseTest{
 
 		utils.clickOnEle(ItemPage.getAddToCartButtonEle());
 		utils.clickOnEle(ItemPage.getcartButtonEle());
-		
 		AddToCartPage AddToCartPage = new AddToCartPage(driver);
 		String actualItemNameOnCartPage = utils.getEleText(AddToCartPage.getItemNameEle());
 		String actualItemPriceOnCartPage = utils.getEleText(AddToCartPage.getItemPriceEle());
 		System.out.println(actualItemNameOnCartPage);
 		System.out.println(actualItemPriceOnCartPage);
-		Assert.assertEquals(actualItemNameOnCartPage.contains(expectedItemName), true, "Does not match wiht the name");
+		Assert.assertEquals(actualItemNameOnCartPage.contains(expectedItemName), true, "Does not match with the name");
 		Assert.assertEquals(actualItemPriceOnCartPage.contains(expectedItemPrice), true,
 				"Does not match with the price");
 		
 		
 	}
 	
-	@Test (groups = {"Regression"})
+	@Test (groups = {"RegressionTest"})
 	public void test2() {
-		
 		driver.get(DemoframeURL);
 		Utils utils = new Utils(driver);
 		DemoQPages DemoQPages = new DemoQPages(driver);
-
 		utils.switchFrame(DemoQPages.getFrmae1Ele());
 		utils.switchFrame(DemoQPages.getFrame2Ele());
 		String childFrmaeContent = utils.getEleText(DemoQPages.getchildFrmaeContentEle());
-		System.out.println("content of child iframe is:- " + childFrmaeContent);
+		System.out.println("Content of child iframe is:- " + childFrmaeContent);
 	}
 	
 	@Test
@@ -86,7 +81,6 @@ public class TestCase extends BaseTest{
 		driver.get(DemoalertURL);
 		Utils utils = new Utils(driver);
 		DemoQAlertPage DemoQAlertPage= new DemoQAlertPage(driver);		
-
 		utils.clickOnEle(DemoQAlertPage.getFirstClickMeButton());
 		utils.acceptAlert();
 		utils.clickOnEle(DemoQAlertPage.getSecondClickMeButton());
@@ -104,19 +98,15 @@ public class TestCase extends BaseTest{
 		driver.get(DemoDragdropURL);
 		Utils utils = new Utils(driver);
 		DragAndDropPage DragAndDropPage = new DragAndDropPage(driver);
-
-		
 		utils.clickOnEle(DragAndDropPage.getAcceptEle());
 		utils.dragAndDrop(DragAndDropPage.getNotAcceptableEle(), DragAndDropPage.getDropHereEle());
 	}
 
-	@Test (groups = {"Regression"})
+	@Test (groups = {"RegressionTest"})
 	public void test5() {
-		
 		driver.get(DemonewWindow);
 		Utils utils = new Utils(driver);
 		NewWindowPages NewWindowPages = new NewWindowPages(driver);
-
 		utils.clickOnEle(NewWindowPages.getNewWindowButtonEle());
 		utils.switchToSecondWindow();
 		String actualText = utils.getEleText(NewWindowPages.getSecondWinHeadingEle());

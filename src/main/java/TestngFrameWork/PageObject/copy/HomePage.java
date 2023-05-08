@@ -9,7 +9,7 @@ import TestngFrameWork.UtilsPacage.Utils;
 
 public class HomePage extends Utils {
 	
-	WebDriver driver;
+	public WebDriver driver;
 	
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -20,10 +20,10 @@ public class HomePage extends Utils {
 	@FindBy (xpath="//div[text()='Fashion']")
 	private WebElement Fashion;
 	
-	@FindBy (xpath="//a[text()='Kids']")
+	@FindBy (xpath="//span[text()='Baby & Kids']")  //a[text()='Kids']
 	private WebElement KidsEle;
 	
-	@FindBy (xpath="//a[text()='Boys & Girls Jeans']")
+	@FindBy (xpath="//a[text()='Kids Clothing']") //a[text()='Boys & Girls Jeans']
 	private WebElement BoysAndGirlsJeanEle;
 		
 	

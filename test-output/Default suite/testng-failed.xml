@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestngFrameWork.Tests.TestCase">
+      <class name="TestngFrameWork.Tests.TestCaseNew">
         <methods>
-          <include name="Flipkart"/>
           <include name="launchApplication"/>
-          <include name="test4"/>
+          <include name="closeApplication"/>
+          <include name="Flipkart"/>
         </methods>
-      </class> <!-- TestngFrameWork.Tests.TestCase -->
+      </class> <!-- TestngFrameWork.Tests.TestCaseNew -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

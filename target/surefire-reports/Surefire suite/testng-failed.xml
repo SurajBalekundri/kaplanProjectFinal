@@ -3,11 +3,20 @@
 <suite thread-count="1" name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="1" name="Surefire test(failed)" verbose="0">
     <classes>
+      <class name="TestngFrameWork.Tests.TestCaseNew">
+        <methods>
+          <include name="launchApplication"/>
+          <include name="Flipkart"/>
+        </methods>
+      </class> <!-- TestngFrameWork.Tests.TestCaseNew -->
       <class name="TestngFrameWork.Tests.TestCase">
         <methods>
-          <include name="Flipkart"/>
           <include name="launchApplication"/>
-          <include name="closeApplication"/>
+          <include name="Flipkart1"/>
+          <include name="test4"/>
+          <include name="test5"/>
+          <include name="test2"/>
+          <include name="test3"/>
         </methods>
       </class> <!-- TestngFrameWork.Tests.TestCase -->
     </classes>

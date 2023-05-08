@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>TestngFrameWork</groupId>
-  <artifactId>EcommerceEndToEnd</artifactId>
+  <artifactId>KaplanProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>EcommerceEndToEnd</name>
+  <name>KaplanProject</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -91,17 +91,17 @@
   
   <profiles>
 	  <profile>
-		  <id>Regression</id>
+		  <id>regression</id>
 		   <build>
 			   <pluginManagement>
 				   <plugins>
 					   <plugin>
 						   <groupId>org.apache.maven.plugins</groupId>
 						   <artifactId>maven-surefire-plugin</artifactId>
-						   <version>3.0.0-M3</version>
+						   <version>3.0.0-M6</version>
 						   <configuration>
 							   <suiteXmlFiles>
-								   <suiteXmlFile>TestSuits/testng.xml</suiteXmlFile>
+								   <suiteXmlFile>TestSuits/regression.xml</suiteXmlFile>
 							   </suiteXmlFiles>
 						   </configuration>
                        </plugin>
@@ -111,25 +111,45 @@
 	  </profile>
 	  
 	  <profile>
-		  <id>sets</id>
-		  		   <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-      <plugins>
-		  
-		  <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0</version>
-        <configuration>
-          <suiteXmlFiles>
-            <suiteXmlFile>TestSuits/groups.xml</suiteXmlFile>
-          </suiteXmlFiles>
-        </configuration>
-      </plugin>
-       </plugins>
-       </pluginManagement>
-       </build>
+		  <id>flipkart</id>
+		  	<build>
+   			 <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    			 <plugins>
+		 		  <plugin>
+      			   <groupId>org.apache.maven.plugins</groupId>
+      			    <artifactId>maven-surefire-plugin</artifactId>
+     			     <version>3.0.0</version>
+      				  <configuration>
+        			   <suiteXmlFiles>
+           				 <suiteXmlFile>TestSuits/flipkart.xml</suiteXmlFile>
+       				   </suiteXmlFiles>
+     			      </configuration>
+			      </plugin>
+    		   </plugins>
+    	    </pluginManagement>
+     	  </build>
 	  </profile>
+	  
+	   <profile>
+		  <id>testng</id>
+		  	<build>
+   			 <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    			 <plugins>
+		 		  <plugin>
+      			   <groupId>org.apache.maven.plugins</groupId>
+      			    <artifactId>maven-surefire-plugin</artifactId>
+     			     <version>3.0.0</version>
+      				  <configuration>
+        			   <suiteXmlFiles>
+           				 <suiteXmlFile>TestSuits/testng.xml</suiteXmlFile>
+       				   </suiteXmlFiles>
+     			      </configuration>
+			      </plugin>
+    		   </plugins>
+    	    </pluginManagement>
+     	  </build>
+	  </profile>
+
   </profiles>
   
   

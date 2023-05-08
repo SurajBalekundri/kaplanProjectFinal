@@ -9,7 +9,7 @@ import TestngFrameWork.UtilsPacage.Utils;
 
 public class DragAndDropPage extends Utils {
 	
-	WebDriver driver;
+	public WebDriver driver;
 	
 	public DragAndDropPage(WebDriver driver) {
 		super(driver);

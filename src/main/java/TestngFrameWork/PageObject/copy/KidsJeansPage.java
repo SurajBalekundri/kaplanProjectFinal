@@ -9,7 +9,7 @@ import TestngFrameWork.UtilsPacage.Utils;
 
 public class KidsJeansPage extends Utils {
 	
-	WebDriver driver;
+	public WebDriver driver;
 	
 	public KidsJeansPage(WebDriver driver) {
 		super(driver);
@@ -20,7 +20,7 @@ public class KidsJeansPage extends Utils {
 	@FindBy (xpath="//div[text()='Price -- Low to High']")
 	private WebElement LowToHighEle;
 	
-	@FindBy (xpath="//div[@class='_13oc-S']//a")
+	@FindBy (xpath="//div[contains(@class, '_1YokD2')][2]//div[10]/div/div") // or //div[@class='_13oc-S']/div[2] or //div[@class='_13oc-S']//a  or //div[@class='_3ywSr_']//img
 	private WebElement FirstItemEle;
 	
 	@FindBy (xpath ="//div[text()='Availability']")
